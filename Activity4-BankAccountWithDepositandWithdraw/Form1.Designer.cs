@@ -67,6 +67,7 @@
             this.buttonProceed.TabIndex = 3;
             this.buttonProceed.Text = "Proceed";
             this.buttonProceed.UseVisualStyleBackColor = false;
+            this.buttonProceed.Click += new System.EventHandler(this.buttonProceed_Click);
             // 
             // label2
             // 
