@@ -20,12 +20,43 @@ namespace Activity4_BankAccountWithDepositandWithdraw
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Current Balance: {account.Balance:C}");
+            try
+            {
+                MessageBox.Show($"Current Balance: {account.Balance:C}");
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonProceed_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                switch (comboBoxTransactionType.SelectedItem.ToString())
+                {
+                    case "Withdraw":
+                        account.Withdraw(Decimal.Parse(numericUpDownAmount.Text));
+                        MessageBox.Show($"Previous Balance: {Decimal.Parse(numericUpDownAmount.Text) + account.Balance}\nWithdraw: {numericUpDownAmount.Text}\nNew Balance: {account.Balance:C}");
+                        break;
+                    case "Deposit":
+                        account.Deposit(Decimal.Parse(numericUpDownAmount.Text));
+                        MessageBox.Show($"Previous Balance: {Decimal.Parse(numericUpDownAmount.Text) - account.Balance}\nDeposit: {numericUpDownAmount.Text}\nNew Balance: {account.Balance:C}");
+                        break;
+                    default:
+                        MessageBox.Show("Please select a valid transaction type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }              
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
