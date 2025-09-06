@@ -47,13 +47,17 @@ namespace Activity4_BankAccountWithDepositandWithdraw
                     default:
                         MessageBox.Show("Please select a valid transaction type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
-                }              
+                }
             }
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

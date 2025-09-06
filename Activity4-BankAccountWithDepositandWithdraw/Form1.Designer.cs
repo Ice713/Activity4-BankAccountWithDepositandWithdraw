@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTransactionType = new System.Windows.Forms.ComboBox();
             this.buttonProceed = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonBalance = new System.Windows.Forms.Button();
@@ -46,16 +46,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Transaction:";
             // 
-            // comboBox1
+            // comboBoxTransactionType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxTransactionType.FormattingEnabled = true;
+            this.comboBoxTransactionType.Items.AddRange(new object[] {
             "Deposit",
             "Withdraw"});
-            this.comboBox1.Location = new System.Drawing.Point(304, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 24);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxTransactionType.Location = new System.Drawing.Point(304, 52);
+            this.comboBoxTransactionType.Name = "comboBoxTransactionType";
+            this.comboBoxTransactionType.Size = new System.Drawing.Size(144, 24);
+            this.comboBoxTransactionType.TabIndex = 1;
             // 
             // buttonProceed
             // 
@@ -99,6 +99,11 @@
             0,
             131072});
             this.numericUpDownAmount.Location = new System.Drawing.Point(304, 83);
+            this.numericUpDownAmount.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numericUpDownAmount.Name = "numericUpDownAmount";
             this.numericUpDownAmount.Size = new System.Drawing.Size(144, 22);
             this.numericUpDownAmount.TabIndex = 6;
@@ -112,7 +117,7 @@
             this.Controls.Add(this.buttonBalance);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonProceed);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxTransactionType);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -125,7 +130,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxTransactionType;
         private System.Windows.Forms.Button buttonProceed;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonBalance;
