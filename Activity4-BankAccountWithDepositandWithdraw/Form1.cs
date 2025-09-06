@@ -38,11 +38,11 @@ namespace Activity4_BankAccountWithDepositandWithdraw
                 {
                     case "Withdraw":
                         account.Withdraw(Decimal.Parse(numericUpDownAmount.Text));
-                        MessageBox.Show($"Previous Balance: {Decimal.Parse(numericUpDownAmount.Text) + account.Balance}\nWithdraw: {numericUpDownAmount.Text}\nNew Balance: {account.Balance:C}");
+                        MessageBox.Show($"Previous Balance: {account.Balance + Decimal.Parse(numericUpDownAmount.Text):C}\nWithdraw: {Decimal.Parse(numericUpDownAmount.Text):C}\nNew Balance: {account.Balance:C}");
                         break;
                     case "Deposit":
                         account.Deposit(Decimal.Parse(numericUpDownAmount.Text));
-                        MessageBox.Show($"Previous Balance: {Decimal.Parse(numericUpDownAmount.Text) - account.Balance}\nDeposit: {numericUpDownAmount.Text}\nNew Balance: {account.Balance:C}");
+                        MessageBox.Show($"Previous Balance: {account.Balance - Decimal.Parse(numericUpDownAmount.Text):C}\nDeposit: {Decimal.Parse(numericUpDownAmount.Text):C}\nNew Balance: {account.Balance:C}");
                         break;
                     default:
                         MessageBox.Show("Please select a valid transaction type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
